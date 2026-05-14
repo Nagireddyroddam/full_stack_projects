@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> own html</title>
+</head>
+<body>
+    <div id= "skillbox" > 
+        <h2>htm skills </h2>
+        <ul id= "skilllist" ></ul>
+        <input type="text" id="skillinput" placeholder="add a skil"/>
+        <button onclick="addskill()"  >add skill  </button>
+
+        
+    
+    </div>
+    <script>
+        let skills=["html","css","javascript"];
+        function showSkills(){
+            let list=document.getElementById("skilllist");
+            list.innerHTML="";
+            for(let i=0; i<skills.length;i++){
+                list.innerHTML +="<li>"+skills[i]+"</li>";
+                
+            }
+
+        }  
+        function addskill(){
+            let input=document.getElementById("skillinput");
+            let newskill=input.value;
+            skills.push(newskill);
+            input.value="   ";
+            showSkills()
+
+        }
+        showSkills();
+
+
+
+    </script>
+
+</body>
+</html>
